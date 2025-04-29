@@ -2,8 +2,6 @@
 
 All notable changes to the OpenInTools plugin will be documented in this file.
 
-## [Unreleased]
-
 ## [1.0.1] - 2025-04-29
 
 ### Changed
