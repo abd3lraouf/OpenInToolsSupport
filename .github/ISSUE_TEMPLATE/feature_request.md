@@ -1,22 +1,22 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
-title: '[FEATURE] '
+name: Feature Request
+about: Suggest a new feature for OpenInTools
+title: "[FEATURE] "
 labels: enhancement
-assignees: ''
+assignees: abd3lraouf
 ---
 
 ## Feature Description
-<!-- A clear and concise description of what you want to happen -->
+<!-- A clear and concise description of the feature you'd like to see added -->
 
 ## Use Case
-<!-- Describe the use case or problem this feature would solve -->
+<!-- Describe the specific use case or scenario where this feature would be valuable -->
 
 ## Proposed Solution
-<!-- Describe how you think this could be implemented (optional) -->
+<!-- If you have an idea of how this could be implemented, describe it here -->
 
-## Alternatives You've Considered
-<!-- Any alternative solutions or features you've considered -->
+## Alternatives Considered
+<!-- Are there any alternative solutions or features you've considered? -->
 
 ## Additional Context
-<!-- Add any other context or screenshots about the feature request here --> 
+<!-- Add any other context, screenshots, or examples about the feature request here -->

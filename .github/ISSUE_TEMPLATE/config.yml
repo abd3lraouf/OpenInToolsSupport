@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-  - name: JetBrains Marketplace
-    url: https://plugins.jetbrains.com/plugin/MARKETPLACE_ID
-    about: Visit the plugin page on JetBrains Marketplace
-  - name: Email Support
-    url: mailto:support@example.com
-    about: Contact us directly for urgent issues 
+  - name: JetBrains Plugin Marketplace
+    url: https://plugins.jetbrains.com/plugin/23376-openintools
+    about: Check out the plugin page for downloads and reviews
+  - name: Documentation
+    url: https://github.com/abd3lraouf/OpenInToolsSupport/blob/main/README.md
+    about: Read the documentation to learn more about the plugin 

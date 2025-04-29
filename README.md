@@ -1,61 +1,88 @@
-# OpenInTools Support
+<p align="center">
+  <img src="art/OpenInTools.png" width="200" alt="OpenInTools Logo"/>
+</p>
 
-This repository is dedicated to providing support for the OpenInTools plugin for IntelliJ IDEA. While the main plugin code is not open-sourced, this repository serves as a public channel for user support, bug reports, and feature requests.
+<h1 align="center">OpenInTools Support</h1>
 
-## About OpenInTools
+<p align="center">
+  <b>Official support repository for the OpenInTools IntelliJ plugin</b>
+</p>
 
-OpenInTools is an IntelliJ IDEA plugin that enables you to open your current project in external development tools with a single click:
+<p align="center">
+  <img src="https://img.shields.io/badge/IntelliJ%20IDEA-242+-07C3F2.svg" alt="IntelliJ IDEA 242+">
+  <img src="https://img.shields.io/badge/platform-macOS%20|%20Windows%20|%20Linux-lightgrey.svg" alt="Platforms">
+</p>
 
-- **Visual Studio Code**: Open your project in VS Code
-- **Cursor Editor**: Open your project in Cursor
-- **Xcode** (macOS only): Open your project or specific workspace in Xcode
+<p align="center">
+  <a href="#-about">About</a> •
+  <a href="#-plugin-information">Plugin Information</a> •
+  <a href="#-reporting-issues">Reporting Issues</a> •
+  <a href="#-feature-requests">Feature Requests</a> •
+  <a href="#-faq">FAQ</a> •
+  <a href="#-release-notes">Release Notes</a> •
+  <a href="#-license">License</a>
+</p>
 
-## How to Get Support
+## 📖 About
 
-### Reporting Issues
+This repository serves as the official support channel for the OpenInTools plugin for IntelliJ IDEA. Here you can report issues, suggest features, and find help for using the plugin.
 
-If you encounter any issues with the plugin, please create a new issue using the "Bug Report" template. Make sure to include:
+The main plugin repository is private, but all user support is handled through this public repository.
 
-1. Your operating system
-2. IntelliJ IDEA version
-3. OpenInTools plugin version
-4. Detailed steps to reproduce the issue
-5. Expected vs. actual behavior
-6. Any error messages or screenshots
+## 🔌 Plugin Information
 
-### Requesting Features
+OpenInTools enhances your IntelliJ IDEA workflow by providing seamless integration with popular external tools:
 
-Have an idea for a new feature? We'd love to hear it! Use the "Feature Request" template to submit your suggestions.
+- **Visual Studio Code** - Open your project with a single click
+- **Cursor Editor** - Quickly access your project in Cursor
+- **Xcode** (macOS only) - Automatically detects and lists all Xcode workspaces and projects
 
-### Questions and Help
+## 🐛 Reporting Issues
 
-For general questions or help using the plugin, please create a new issue using the "Question" template.
+If you encounter an issue with OpenInTools, please report it by [creating a new issue](https://github.com/abd3lraouf/OpenInToolsSupport/issues/new) with the following information:
 
-## Installation
+1. **Description** - A clear description of the issue
+2. **Steps to Reproduce** - Detailed steps to reproduce the problem
+3. **Expected Behavior** - What you expected to happen
+4. **Actual Behavior** - What actually happened
+5. **Environment** - Your operating system, IntelliJ IDEA version, and OpenInTools version
+6. **Screenshots** - If applicable, add screenshots to help explain your problem
 
-The OpenInTools plugin can be installed from the JetBrains Marketplace:
+## 💡 Feature Requests
 
-1. In IntelliJ IDEA, go to `Settings/Preferences > Plugins > Marketplace`
-2. Search for "OpenInTools"
-3. Click "Install"
+Have an idea to improve OpenInTools? We'd love to hear it! To submit a feature request:
 
-## Configuration
+1. [Create a new issue](https://github.com/abd3lraouf/OpenInToolsSupport/issues/new)
+2. Use the title format: `[Feature Request] Your Feature Idea`
+3. Provide a detailed description of the feature and its potential benefits
+4. If possible, include mock-ups or examples of how the feature might work
 
-After installation, you can configure the plugin in:
+## ❓ FAQ
 
-`Settings/Preferences > Tools > Open In Tools`
+### Which IntelliJ-based IDEs are supported?
 
-There you can set custom paths for VS Code, Cursor, and Xcode, or use the auto-detect feature to find them automatically.
+OpenInTools supports all IntelliJ-based IDEs, including IntelliJ IDEA, WebStorm, PyCharm, PhpStorm, and others.
 
-## Resources
+### Is the Xcode integration available on Windows or Linux?
 
-- [Plugin Page on JetBrains Marketplace](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID) (Coming soon)
-- [Changelog](./CHANGELOG.md)
+No, the Xcode integration is only available on macOS, as Xcode itself is a macOS-exclusive application.
 
-## Support This Project
+### How does OpenInTools detect my installed tools?
 
-If you find this plugin useful, consider:
+The plugin automatically searches for common installation paths for VS Code, Cursor, and Xcode. If your installation is in a non-standard location, you can manually set the path in the plugin settings.
 
-- Leaving a positive review on the JetBrains Marketplace
-- Sharing it with your colleagues and friends
-- [Buy me a coffee](https://buymeacoffee.com/) ☕ 
+### Can I customize which files to open in each tool?
+
+Currently, OpenInTools opens the entire project folder in VS Code and Cursor. For Xcode, you can select specific .xcworkspace or .xcodeproj files from the dropdown menu.
+
+## 📝 Release Notes
+
+See the [CHANGELOG.md](CHANGELOG.md) file for detailed release notes.
+
+## 📄 License
+
+OpenInTools is proprietary software. See the [LICENSE](LICENSE) file for details. This software is not open source and is protected by copyright laws.
+
+---
+
+<p align="center">Developed with ❤️ by <a href="https://github.com/abd3lraouf">Abdelraouf Sabri</a></p> 
