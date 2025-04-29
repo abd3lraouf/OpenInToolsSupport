@@ -17,6 +17,9 @@
 <p align="center">
   <a href="#-about">About</a> •
   <a href="#-plugin-information">Plugin Information</a> •
+  <a href="#-features">Features</a> •
+  <a href="#-usage">Usage</a> •
+  <a href="#-configuration">Configuration</a> •
   <a href="#-reporting-issues">Reporting Issues</a> •
   <a href="#-feature-requests">Feature Requests</a> •
   <a href="#-faq">FAQ</a> •
@@ -37,6 +40,55 @@ OpenInTools enhances your IntelliJ IDEA workflow by providing seamless integrati
 - **Visual Studio Code** - Open your project with a single click
 - **Cursor Editor** - Quickly access your project in Cursor
 - **Xcode** (macOS only) - Automatically detects and lists all Xcode workspaces and projects
+
+<p align="center">
+  <img src="art/screenshots/2.png" width="600" alt="OpenInTools toolbar integration"/>
+  <br>
+  <em>OpenInTools integrates seamlessly into your IDE toolbar</em>
+</p>
+
+## ✨ Features
+
+OpenInTools enhances your development workflow by providing seamless integration with popular external editors:
+
+- **🚀 One-Click Access** - Integrated toolbar buttons for quick access to external tools
+- **🔍 Visual Studio Code Integration** - Open your project in VS Code instantly
+- **⚡ Cursor Editor Support** - Quickly launch your project in Cursor
+- **🍏 Xcode Integration** - Automatically detects and lists all Xcode workspaces and projects (macOS only)
+- **🔎 Smart Detection** - Automatically discovers installed tools on your system
+- **🔧 Customizable** - Configure custom paths for all supported tools
+- **💻 Cross-Platform** - Works on Windows, macOS, and Linux (Xcode feature is macOS only)
+
+<p align="center">
+  <img src="art/screenshots/1.png" width="600" alt="Xcode workspaces dropdown"/>
+  <br>
+  <em>Easily select and open Xcode workspaces with the dropdown menu</em>
+</p>
+
+## 🚀 Usage
+
+After installation, the plugin automatically adds three buttons to your IDE toolbar:
+
+- **VS Code button** - Opens your project in Visual Studio Code
+- **Cursor button** - Opens your project in Cursor Editor
+- **Xcode button** - Shows a dropdown of available Xcode workspaces/projects (macOS only)
+
+For Xcode, the plugin will scan your project for `.xcworkspace` or `.xcodeproj` files and present them in a dropdown menu, making it easy to select the specific workspace you want to open.
+
+## ⚙️ Configuration
+
+You can configure the plugin in:  
+**Settings | Tools | Open In Tools**
+
+Here you can:
+- Set custom paths for VS Code, Cursor, and Xcode
+- Use the auto-detect feature to find installed tools automatically
+
+<p align="center">
+  <img src="art/screenshots/3png" width="600" alt="Settings configuration panel"/>
+  <br>
+  <em>Configure tool paths in the settings panel</em>
+</p>
 
 ## 🐛 Reporting Issues
 
