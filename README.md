@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/IntelliJ%20IDEA-242+-07C3F2.svg" alt="IntelliJ IDEA 242+">
+  <img src="https://img.shields.io/badge/IntelliJ%20IDEA-241+-07C3F2.svg" alt="IntelliJ IDEA 242+">
   <img src="https://img.shields.io/badge/platform-macOS%20|%20Windows%20|%20Linux-lightgrey.svg" alt="Platforms">
 </p>
 
