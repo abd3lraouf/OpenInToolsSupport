@@ -1,7 +1,7 @@
 blank_issues_enabled: false
 contact_links:
   - name: JetBrains Plugin Marketplace
-    url: https://plugins.jetbrains.com/plugin/23376-openintools
+    url: https://plugins.jetbrains.com/plugin/27235-open-in-tools
     about: Check out the plugin page for downloads and reviews
   - name: Documentation
     url: https://github.com/abd3lraouf/OpenInToolsSupport/blob/main/README.md
