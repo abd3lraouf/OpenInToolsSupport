@@ -4,7 +4,16 @@ All notable changes to the OpenInTools plugin will be documented in this file.
 
 ## [Unreleased]
 
-## [0.1.0] - 2023-10-07
+## [1.0.1] - 2025-04-29
+
+### Changed
+- Enhances Xcode action component for improved theme integration
+- Refactors settings UI for better clarity and readability
+- Reorganizes components for better maintainability
+- Refactors action classes for improved readability and consistency
+- Updates notification messages for better user feedback
+
+## [1.0.0] - 2025-04-29
 
 ### Added
 - Initial release of OpenInTools plugin
