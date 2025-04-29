@@ -10,6 +10,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Version-1.0.1-success.svg" alt="Version 1.0.1">
+  <a href="https://plugins.jetbrains.com/plugin/27235-open-in-tools"><img src="https://img.shields.io/jetbrains/plugin/d/27235-open-in-tools.svg" alt="Downloads"></a>
   <img src="https://img.shields.io/badge/IntelliJ%20IDEA-241+-07C3F2.svg" alt="IntelliJ IDEA 242+">
   <img src="https://img.shields.io/badge/platform-macOS%20|%20Windows%20|%20Linux-lightgrey.svg" alt="Platforms">
 </p>
@@ -85,7 +86,7 @@ Here you can:
 - Use the auto-detect feature to find installed tools automatically
 
 <p align="center">
-  <img src="art/screenshots/3png" width="600" alt="Settings configuration panel"/>
+  <img src="art/screenshots/3.png" width="600" alt="Settings configuration panel"/>
   <br>
   <em>Configure tool paths in the settings panel</em>
 </p>
