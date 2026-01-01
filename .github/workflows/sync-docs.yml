@@ -99,12 +99,38 @@ jobs:
           echo "$CHANGELOG" > /tmp/changelog.txt
           echo "Changelog extracted for $VERSION"
 
+      - name: Download Plugin Artifact from Main Repo
+        id: artifact
+        env:
+          GH_TOKEN: ${{ secrets.MAIN_REPO_TOKEN }}
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          TAG="v$VERSION"
+
+          # Download the plugin zip from main repo release
+          gh release download "$TAG" \
+            --repo abd3lraouf/OpenInTools \
+            --pattern "*.zip" \
+            --dir /tmp/artifacts || echo "No artifact found"
+
+          # Get artifact name if downloaded
+          if ls /tmp/artifacts/*.zip 1> /dev/null 2>&1; then
+            ARTIFACT_PATH=$(ls /tmp/artifacts/*.zip | head -1)
+            echo "artifact_path=$ARTIFACT_PATH" >> $GITHUB_OUTPUT
+            echo "has_artifact=true" >> $GITHUB_OUTPUT
+            echo "Downloaded artifact: $ARTIFACT_PATH"
+          else
+            echo "has_artifact=false" >> $GITHUB_OUTPUT
+            echo "No artifact to download"
+          fi
+
       - name: Create or Update Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ steps.version.outputs.tag }}
           name: OpenInTools ${{ steps.version.outputs.tag }}
           body_path: /tmp/changelog.txt
+          files: ${{ steps.artifact.outputs.has_artifact == 'true' && steps.artifact.outputs.artifact_path || '' }}
           draft: false
           prerelease: false
           make_latest: true
