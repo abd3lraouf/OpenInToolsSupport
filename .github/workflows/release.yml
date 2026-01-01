@@ -1,0 +1,105 @@
+# GitHub Actions Workflow for creating releases on the public support repo
+# This workflow is triggered manually or when version tags are pushed
+#
+# The support repo mirrors releases from the main (closed-source) repo
+# to provide public release notes and changelog for users.
+
+name: Release
+
+on:
+  # Manual trigger with version input
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release (e.g., 2.1.0)'
+        required: true
+        type: string
+      prerelease:
+        description: 'Is this a pre-release?'
+        required: false
+        type: boolean
+        default: false
+
+  # Auto-trigger on version tags
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine Version
+        id: version
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            VERSION="${{ github.event.inputs.version }}"
+          else
+            VERSION="${GITHUB_REF#refs/tags/v}"
+          fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "tag=v$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Extract Changelog
+        id: changelog
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+
+          # Extract changelog section for this version
+          CHANGELOG=$(awk -v ver="$VERSION" '
+            /^## \['"$VERSION"'\]/ { capture=1; next }
+            /^## \[/ { if(capture) exit }
+            capture { print }
+          ' CHANGELOG.md)
+
+          # If no specific version found, try to get unreleased
+          if [[ -z "$CHANGELOG" ]]; then
+            CHANGELOG=$(awk '
+              /^## \[Unreleased\]/ { capture=1; next }
+              /^## \[/ { if(capture) exit }
+              capture { print }
+            ' CHANGELOG.md)
+          fi
+
+          # Fallback message if still empty
+          if [[ -z "$CHANGELOG" ]]; then
+            CHANGELOG="See CHANGELOG.md for details."
+          fi
+
+          # Write to file for multi-line handling
+          echo "$CHANGELOG" > /tmp/changelog.txt
+
+          echo "Extracted changelog:"
+          cat /tmp/changelog.txt
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: OpenInTools ${{ steps.version.outputs.tag }}
+          body_path: /tmp/changelog.txt
+          draft: false
+          prerelease: ${{ github.event.inputs.prerelease || false }}
+          generate_release_notes: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Summary
+        run: |
+          echo "## Release Created" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** ${{ steps.version.outputs.tag }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Changelog:**" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          cat /tmp/changelog.txt >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY

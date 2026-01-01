@@ -1,0 +1,77 @@
+# Workflow to sync documentation from main repo releases
+# Can be triggered manually or via repository dispatch from main repo
+
+name: Sync Documentation
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version being released'
+        required: true
+        type: string
+
+  repository_dispatch:
+    types: [sync-docs]
+
+jobs:
+  sync:
+    name: Sync and Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get Version
+        id: version
+        run: |
+          if [[ "${{ github.event_name }}" == "repository_dispatch" ]]; then
+            VERSION="${{ github.event.client_payload.version }}"
+          else
+            VERSION="${{ github.event.inputs.version }}"
+          fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Processing version: $VERSION"
+
+      - name: Update Version Badge in README
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          sed -i "s/Version-[0-9]*\.[0-9]*\.[0-9]*/Version-$VERSION/" README.md
+
+          if git diff --quiet README.md; then
+            echo "No changes to README"
+          else
+            echo "README updated with version $VERSION"
+          fi
+
+      - name: Commit Changes
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if ! git diff --quiet; then
+            git add -A
+            git commit -m "Sync documentation for v$VERSION"
+            git push
+          else
+            echo "No changes to commit"
+          fi
+
+      - name: Create Release Tag
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          TAG="v$VERSION"
+
+          # Check if tag already exists
+          if git rev-parse "$TAG" >/dev/null 2>&1; then
+            echo "Tag $TAG already exists, skipping"
+          else
+            git tag "$TAG"
+            git push origin "$TAG"
+            echo "Created and pushed tag $TAG"
+          fi
