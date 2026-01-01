@@ -5,7 +5,7 @@
 <h1 align="center">OpenInTools Support</h1>
 
 <p align="center">
-  <b>Official support repository for the OpenInTools IntelliJ plugin</b>
+  <b>Questions, bugs, ideas — you're in the right place.</b>
 </p>
 
 <p align="center">
@@ -16,203 +16,136 @@
 </p>
 
 <p align="center">
-  <a href="#-about">About</a> •
-  <a href="#-features">Features</a> •
-  <a href="#-supported-tools">Tools</a> •
-  <a href="#-xcode-integration">Xcode</a> •
-  <a href="#-reporting-issues">Issues</a> •
-  <a href="#-faq">FAQ</a>
+  <a href="#-what-is-openintools">What Is It</a> •
+  <a href="#-getting-help">Get Help</a> •
+  <a href="#-common-questions">FAQ</a> •
+  <a href="#-whats-new">What's New</a>
 </p>
 
 ---
 
-## 📖 About
+## 🔌 What Is OpenInTools?
 
-This is the official support channel for **OpenInTools** — the plugin that bridges your JetBrains IDE with your favorite external editors.
+You know that moment when you're in Android Studio, but need to quickly check something in VS Code? Or you're working on a KMP project and need to hop into Xcode?
 
-**One click to VS Code. One click to Cursor. One click to Xcode. No friction, just flow.**
-
-> The main plugin repository is private. All support, issues, and feature requests are handled here.
+**OpenInTools is a JetBrains plugin that makes switching editors instant.** One click from your toolbar, and you're in the other editor — same file, same line. No hunting through folders.
 
 <p align="center">
   <a href="https://plugins.jetbrains.com/plugin/27235-open-in-tools">
-    <img src="https://img.shields.io/badge/Install%20from-JetBrains%20Marketplace-07C3F2?style=for-the-badge&logo=jetbrains" alt="Install from JetBrains Marketplace"/>
+    <img src="https://img.shields.io/badge/Get%20It%20on-JetBrains%20Marketplace-07C3F2?style=for-the-badge&logo=jetbrains" alt="Install from JetBrains Marketplace"/>
   </a>
 </p>
 
-## ✨ Features
+### What You Can Do
 
-### Toolbar Integration
-
-One-click access to all your favorite editors directly from the toolbar.
-
-<p align="center">
-  <img src="art/screenshots/toolbar.png" width="700" alt="Toolbar Integration"/>
-</p>
-
-### Context Menu
-
-Right-click any file, folder, or editor tab to open in external tools.
+- **Toolbar buttons** for your favorite editors — VS Code, Cursor, Xcode, and more
+- **Right-click menus** on any file, folder, or tab
+- **Quick switcher** (`Cmd+Shift+O`) with fuzzy search
+- **Xcode dropdown** just like Android Studio's run configurations
 
 <p align="center">
-  <img src="art/screenshots/context-menu.png" width="500" alt="Context Menu"/>
+  <img src="art/screenshots/toolbar.png" width="700" alt="Toolbar buttons for quick switching"/>
 </p>
 
-### Quick Switcher
+### Supported Editors
 
-Press `Cmd+Shift+O` / `Ctrl+Shift+O` for fuzzy search with aliases and recent tools first.
+| Editor | Platforms | Opens at Line |
+|--------|-----------|:-------------:|
+| VS Code | All | ✅ |
+| Cursor | All | ✅ |
+| Fleet | All | ✅ |
+| Zed | macOS, Linux | ✅ |
+| Sublime Text | All | ✅ |
+| Windsurf | All | ✅ |
+| Xcode | macOS | — |
 
-<p align="center">
-  <img src="art/screenshots/quick-actions.png" width="500" alt="Quick Switcher"/>
-</p>
+---
 
-### Feature Overview
+## 🆘 Getting Help
 
-| Feature | Description |
-|---------|-------------|
-| **One-Click Launch** | Toolbar buttons open your project instantly |
-| **Open at Cursor** | Jumps to exact line:column in the target editor |
-| **Quick Switcher** | `Cmd+Shift+O` — fuzzy search, aliases, recent tools first |
-| **Context Menus** | Right-click any file, folder, or tab |
-| **Drag & Drop Order** | Customize toolbar and menu order separately |
-| **Auto-Detection** | Finds installed tools automatically |
+### Found a Bug?
 
-## 🛠 Supported Tools
+[Open an issue](https://github.com/abd3lraouf/OpenInToolsSupport/issues/new) and tell me:
+- What happened
+- What you expected to happen
+- Steps to reproduce (if you can)
+- Your OS, IDE, and plugin version
 
-| Editor | Platforms | Open at Line | Quick Aliases |
-|--------|-----------|:------------:|---------------|
-| **VS Code** | All | ✅ | `vsc`, `code` |
-| **Cursor** | All | ✅ | `cur`, `ai` |
-| **Fleet** | All | ✅ | `flt`, `jb` |
-| **Zed** | macOS, Linux | ✅ | `z` |
-| **Sublime Text** | All | ✅ | `subl`, `st` |
-| **Windsurf** | All | ✅ | `ws`, `surf` |
-| **Xcode** | macOS | — | `xc`, `ios` |
+Screenshots help a lot!
 
-## 🍎 Xcode Integration
+### Have an Idea?
 
-**Native-feeling Xcode integration** for Kotlin Multiplatform and iOS developers.
+I'd love to hear it. [Start a discussion](https://github.com/abd3lraouf/OpenInToolsSupport/discussions) or [open an issue](https://github.com/abd3lraouf/OpenInToolsSupport/issues/new) with `[Feature]` in the title.
 
-### Android Studio-Style Dropdown
+---
 
-The Xcode toolbar button works just like Android Studio's run configuration selector:
-- **Dropdown menu** with all discovered workspaces and projects
-- **Integrated chevron** — click anywhere on the button
-- **Play button** to launch the selected configuration
-
-### Two Modes
-
-| Mode | Play Button | Click Behavior |
-|------|:-----------:|----------------|
-| **Selection Mode** | ✅ Visible | Selects config, click play to launch |
-| **Direct Mode** | ❌ Hidden | Opens immediately on click |
-
-### Smart Project Discovery
-
-- **Workspaces** (`.xcworkspace`) — CocoaPods, SPM, multi-target projects
-- **Projects** (`.xcodeproj`) — Standalone Xcode projects
-- **Info.plist** — Quick access to app configuration files
-- **Intelligent Opening** — Plist files open within their workspace context
-
-### Reveal in Xcode
-
-Press `Cmd+Shift+X` to reveal the current file in Xcode's Project Navigator.
-
-## ⚙️ Configuration
-
-**Settings → Tools → Open In Tools**
-
-### Main Settings
-
-Configure which tools appear in toolbar and context menus, drag to reorder, and set custom paths.
-
-<p align="center">
-  <img src="art/screenshots/settings-main.png" width="700" alt="Main Settings"/>
-</p>
-
-### Xcode Settings (macOS)
-
-Configure Xcode-specific options: workspace/project scanning, play button visibility, and more.
-
-<p align="center">
-  <img src="art/screenshots/settings-xcode.png" width="700" alt="Xcode Settings"/>
-</p>
-
-## 🐛 Reporting Issues
-
-Found a bug? [Create a new issue](https://github.com/abd3lraouf/OpenInToolsSupport/issues/new) with:
-
-1. **Description** — Clear description of the issue
-2. **Steps to Reproduce** — How to trigger the problem
-3. **Expected vs Actual** — What should happen vs what happens
-4. **Environment** — OS, IDE version, plugin version
-5. **Screenshots** — If applicable
-
-## 💡 Feature Requests
-
-Have an idea? [Submit a feature request](https://github.com/abd3lraouf/OpenInToolsSupport/issues/new):
-
-- Use title format: `[Feature] Your Idea`
-- Describe the use case and benefits
-- Include mockups if possible
-
-## ❓ FAQ
+## ❓ Common Questions
 
 <details>
-<summary><b>Which IDEs are supported?</b></summary>
+<summary><b>Which JetBrains IDEs work with this?</b></summary>
 
-All JetBrains IDEs: IntelliJ IDEA, Android Studio, WebStorm, PyCharm, GoLand, Rider, etc.
+All of them! IntelliJ IDEA, Android Studio, WebStorm, PyCharm, GoLand, Rider — if it's based on IntelliJ Platform 2025.2 or later, it'll work.
 </details>
 
 <details>
-<summary><b>Is Xcode integration available on Windows/Linux?</b></summary>
+<summary><b>I don't see Xcode in the toolbar. Is it broken?</b></summary>
 
-No, Xcode is macOS-only. The Xcode features only appear on macOS.
+Xcode integration only shows up on macOS (since Xcode is macOS-only). If you're on a Mac and still don't see it, check if Xcode is installed at `/Applications/Xcode.app`.
 </details>
 
 <details>
-<summary><b>How does tool detection work?</b></summary>
+<summary><b>An editor isn't being detected. What do I do?</b></summary>
 
-The plugin searches common installation paths. You can also set custom paths in Settings → Tools → Open In Tools.
+Go to **Settings → Tools → Open In Tools** and set a custom path for that editor. The plugin searches common installation locations, but yours might be somewhere unusual.
 </details>
 
 <details>
-<summary><b>Can I open specific files instead of the whole project?</b></summary>
+<summary><b>Can I open just a file, not the whole project?</b></summary>
 
-Yes! Use the context menu on any file, folder, or editor tab. Files open at the exact cursor position in supporting editors.
+Yes! Right-click any file, folder, or editor tab. When you open a file, it jumps to the exact line you were on (in editors that support it).
 </details>
 
 <details>
-<summary><b>How do I change the toolbar order?</b></summary>
+<summary><b>How do I reorder the toolbar buttons?</b></summary>
 
-Settings → Tools → Open In Tools. Drag and drop to reorder. Toolbar and context menu have separate ordering.
+**Settings → Tools → Open In Tools**. Drag and drop to reorder. You can set different orders for the toolbar and context menu.
 </details>
 
-## 📝 Release Notes
+<details>
+<summary><b>What's the Xcode "Selection Mode" vs "Direct Mode"?</b></summary>
 
-See [CHANGELOG.md](CHANGELOG.md) for version history.
+- **Selection Mode**: Click the Xcode button to see a dropdown of workspaces/projects. Click the play button to open your selection.
+- **Direct Mode**: Click the button to open immediately (good when you only have one Xcode project).
 
-### What's New in 2.1.1
+Toggle in **Settings → Tools → Open In Tools → Xcode**.
+</details>
 
-- **Fixed:** DataContext error when opening Xcode dropdown in IntelliJ 2025.3+
-- **Fixed:** Plugin icon now displays correctly in IDE plugin browser
+---
 
-### What's New in 2.1.0
+## 🆕 What's New
 
-- **Xcode Toolbar Dropdown** — Android Studio-style configuration selector
-- **Play Button Toggle** — Choose between selection mode and direct open mode
-- **Intelligent Plist Opening** — Opens within workspace/project context
-- **Background Project Discovery** — Async scanning with caching
+### 2.1.1
+- Fixed DataContext error when opening Xcode dropdown (IntelliJ 2025.3+)
+- Fixed plugin icon not showing in IDE plugin browser
+
+### 2.1.0
+- Xcode toolbar dropdown — works like Android Studio's run configuration selector
+- Play button toggle for different workflows
+- Smart opening: Info.plist files open in their workspace context
+- Background project discovery with caching
+
+See [CHANGELOG.md](CHANGELOG.md) for the full history.
+
+---
 
 ## 📄 License
 
-**Proprietary Software** — © 2025-2026 Abdelraouf Sabri. All Rights Reserved.
+Proprietary Software — © 2025-2026 Abdelraouf Sabri. All Rights Reserved.
 
-This software is not open source. See [LICENSE](LICENSE) for terms.
+See [LICENSE](LICENSE) for details.
 
 ---
 
 <p align="center">
-  <b>Built for developers who use multiple tools.</b><br>
-  <sub>© 2025-2026 <a href="https://github.com/abd3lraouf">Abdelraouf Sabri</a> — All Rights Reserved</sub>
+  <sub>Made with care by <a href="https://github.com/abd3lraouf">Abdelraouf Sabri</a></sub>
 </p>
