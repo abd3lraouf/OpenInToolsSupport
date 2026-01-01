@@ -1,48 +1,54 @@
-PROPRIETARY SOFTWARE LICENSE AGREEMENT
-© 2025 Abdelraouf Sabri. All Rights Reserved.
+PROPRIETARY SOFTWARE LICENSE
 
-This is proprietary software. This software and its associated documentation 
-(the "Software") is the property of Abdelraouf Sabri (the "Owner").
+Copyright (c) 2025-2026 Abdelraouf Sabri. All Rights Reserved.
 
-TERMS AND CONDITIONS
+NOTICE: This is proprietary software. Unauthorized copying, modification,
+distribution, or use of this software, via any medium, is strictly prohibited.
 
 1. OWNERSHIP
-   The Software and all intellectual property rights therein are owned by the Owner and are 
-   protected by copyright laws and international treaty provisions.
+   This software and all associated documentation, source code, and intellectual
+   property are the exclusive property of Abdelraouf Sabri ("Owner").
 
-2. LICENSE GRANT
-   The Owner hereby grants you a non-exclusive, non-transferable right to use the Software 
-   for personal or commercial use through the JetBrains Marketplace, subject to these terms.
+2. GRANT OF LICENSE
+   The Owner grants you a limited, non-exclusive, non-transferable license to
+   use this software solely for personal or internal business purposes, subject
+   to the terms of this license.
 
 3. RESTRICTIONS
    You may NOT:
-   - Modify, adapt, translate, reverse engineer, decompile, or disassemble the Software
-   - Create derivative works based on the Software
-   - Copy, redistribute, publish, or otherwise make the Software available to third parties
-   - Remove any proprietary notices or labels on the Software
-   - Use the Software in any way not expressly authorized by this License
+   - Copy, modify, or distribute this software or any portion thereof
+   - Reverse engineer, decompile, or disassemble the software
+   - Remove or alter any proprietary notices or labels
+   - Sublicense, rent, lease, or lend the software to third parties
+   - Use the software to create derivative works
+   - Use the software for any unlawful purpose
 
-4. SUPPORT
-   This repository (OpenInToolsSupport) is provided for the limited purpose of issue reporting,
-   feature requests, and user support for the OpenInTools plugin.
+4. SUPPORT REPOSITORY
+   This repository (OpenInToolsSupport) is provided solely for:
+   - Issue reporting and bug tracking
+   - Feature requests and discussions
+   - User support and documentation
 
 5. NO WARRANTY
-   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
-   INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
-   PURPOSE AND NONINFRINGEMENT.
+   THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
 
 6. LIMITATION OF LIABILITY
-   IN NO EVENT SHALL THE OWNER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
-   IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
-   THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+   IN NO EVENT SHALL THE OWNER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+   LIABILITY ARISING FROM THE USE OF THIS SOFTWARE.
 
 7. TERMINATION
-   This License is effective until terminated. This License will terminate immediately without
-   notice if you fail to comply with any of its provisions.
+   This license is effective until terminated. It will terminate automatically
+   if you fail to comply with any term of this license. Upon termination, you
+   must destroy all copies of the software.
 
 8. GOVERNING LAW
-   This License shall be governed by and construed in accordance with the laws applicable in
-   the jurisdiction of the Owner, without regard to its conflict of law provisions.
+   This license shall be governed by and construed in accordance with
+   applicable laws.
 
-By using the Software, you acknowledge that you have read this License, understand it, and
-agree to be bound by its terms and conditions. 
+For licensing inquiries, contact: github.com/abd3lraouf
+
+---
+OpenInTools - JetBrains IDE Plugin
+Proprietary Software - All Rights Reserved
