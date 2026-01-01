@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-2.1.0-success.svg" alt="Version 2.1.0">
+  <img src="https://img.shields.io/badge/Version-2.1.1-success.svg" alt="Version 2.1.1">
   <a href="https://plugins.jetbrains.com/plugin/27235-open-in-tools"><img src="https://img.shields.io/jetbrains/plugin/d/27235-open-in-tools.svg" alt="Downloads"></a>
   <img src="https://img.shields.io/badge/IntelliJ-2025.2+-07C3F2.svg" alt="IntelliJ 2025.2+">
   <img src="https://img.shields.io/badge/macOS%20|%20Windows%20|%20Linux-lightgrey.svg" alt="Platforms">
@@ -21,7 +21,6 @@
   <a href="#-supported-tools">Tools</a> •
   <a href="#-xcode-integration">Xcode</a> •
   <a href="#-reporting-issues">Issues</a> •
-  <a href="#-feature-requests">Features</a> •
   <a href="#-faq">FAQ</a>
 </p>
 
@@ -35,7 +34,39 @@ This is the official support channel for **OpenInTools** — the plugin that bri
 
 > The main plugin repository is private. All support, issues, and feature requests are handled here.
 
+<p align="center">
+  <a href="https://plugins.jetbrains.com/plugin/27235-open-in-tools">
+    <img src="https://img.shields.io/badge/Install%20from-JetBrains%20Marketplace-07C3F2?style=for-the-badge&logo=jetbrains" alt="Install from JetBrains Marketplace"/>
+  </a>
+</p>
+
 ## ✨ Features
+
+### Toolbar Integration
+
+One-click access to all your favorite editors directly from the toolbar.
+
+<p align="center">
+  <img src="art/screenshots/toolbar.png" width="700" alt="Toolbar Integration"/>
+</p>
+
+### Context Menu
+
+Right-click any file, folder, or editor tab to open in external tools.
+
+<p align="center">
+  <img src="art/screenshots/context-menu.png" width="500" alt="Context Menu"/>
+</p>
+
+### Quick Switcher
+
+Press `Cmd+Shift+O` / `Ctrl+Shift+O` for fuzzy search with aliases and recent tools first.
+
+<p align="center">
+  <img src="art/screenshots/quick-actions.png" width="500" alt="Quick Switcher"/>
+</p>
+
+### Feature Overview
 
 | Feature | Description |
 |---------|-------------|
@@ -86,6 +117,26 @@ The Xcode toolbar button works just like Android Studio's run configuration sele
 ### Reveal in Xcode
 
 Press `Cmd+Shift+X` to reveal the current file in Xcode's Project Navigator.
+
+## ⚙️ Configuration
+
+**Settings → Tools → Open In Tools**
+
+### Main Settings
+
+Configure which tools appear in toolbar and context menus, drag to reorder, and set custom paths.
+
+<p align="center">
+  <img src="art/screenshots/settings-main.png" width="700" alt="Main Settings"/>
+</p>
+
+### Xcode Settings (macOS)
+
+Configure Xcode-specific options: workspace/project scanning, play button visibility, and more.
+
+<p align="center">
+  <img src="art/screenshots/settings-xcode.png" width="700" alt="Xcode Settings"/>
+</p>
 
 ## 🐛 Reporting Issues
 
@@ -140,6 +191,11 @@ Settings → Tools → Open In Tools. Drag and drop to reorder. Toolbar and cont
 ## 📝 Release Notes
 
 See [CHANGELOG.md](CHANGELOG.md) for version history.
+
+### What's New in 2.1.1
+
+- **Fixed:** DataContext error when opening Xcode dropdown in IntelliJ 2025.3+
+- **Fixed:** Plugin icon now displays correctly in IDE plugin browser
 
 ### What's New in 2.1.0
 

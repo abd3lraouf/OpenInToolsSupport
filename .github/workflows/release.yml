@@ -1,29 +1,24 @@
-# GitHub Actions Workflow for creating releases on the public support repo
-# This workflow is triggered manually or when version tags are pushed
+# Support Repo Release Workflow
+# Triggered by main repo after a successful release
 #
-# The support repo mirrors releases from the main (closed-source) repo
-# to provide public release notes and changelog for users.
+# Creates a matching release on the support repo with:
+# - Changelog from CHANGELOG.md
+# - Plugin artifact downloaded from main repo
 
 name: Release
 
 on:
-  # Manual trigger with version input
+  # Triggered by main repo via repository_dispatch
+  repository_dispatch:
+    types: [release]
+
+  # Manual trigger for testing
   workflow_dispatch:
     inputs:
       version:
         description: 'Version to release (e.g., 2.1.0)'
         required: true
         type: string
-      prerelease:
-        description: 'Is this a pre-release?'
-        required: false
-        type: boolean
-        default: false
-
-  # Auto-trigger on version tags
-  push:
-    tags:
-      - 'v*'
 
 jobs:
   release:
@@ -41,13 +36,14 @@ jobs:
       - name: Determine Version
         id: version
         run: |
-          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
-            VERSION="${{ github.event.inputs.version }}"
+          if [[ "${{ github.event_name }}" == "repository_dispatch" ]]; then
+            VERSION="${{ github.event.client_payload.version }}"
           else
-            VERSION="${GITHUB_REF#refs/tags/v}"
+            VERSION="${{ github.event.inputs.version }}"
           fi
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "tag=v$VERSION" >> $GITHUB_OUTPUT
+          echo "Processing version: $VERSION"
 
       - name: Extract Changelog
         id: changelog
@@ -81,6 +77,39 @@ jobs:
           echo "Extracted changelog:"
           cat /tmp/changelog.txt
 
+      - name: Download Plugin Artifact
+        env:
+          MAIN_REPO_TOKEN: ${{ secrets.MAIN_REPO_TOKEN }}
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          TAG="v$VERSION"
+
+          echo "Downloading artifact for $TAG from main repo..."
+
+          # Get the release by tag
+          RELEASE_DATA=$(curl -s \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token $MAIN_REPO_TOKEN" \
+            "https://api.github.com/repos/abd3lraouf/OpenInTools/releases/tags/$TAG")
+
+          # Extract asset download URL (the .zip file)
+          ASSET_URL=$(echo "$RELEASE_DATA" | jq -r '.assets[] | select(.name | endswith(".zip")) | .url')
+
+          if [[ -z "$ASSET_URL" || "$ASSET_URL" == "null" ]]; then
+            echo "Warning: No artifact found for $TAG"
+            exit 0
+          fi
+
+          # Download the asset
+          curl -L \
+            -H "Accept: application/octet-stream" \
+            -H "Authorization: token $MAIN_REPO_TOKEN" \
+            "$ASSET_URL" \
+            -o "OpenInTools-$VERSION.zip"
+
+          echo "Downloaded: OpenInTools-$VERSION.zip"
+          ls -la *.zip
+
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
@@ -88,8 +117,9 @@ jobs:
           name: OpenInTools ${{ steps.version.outputs.tag }}
           body_path: /tmp/changelog.txt
           draft: false
-          prerelease: ${{ github.event.inputs.prerelease || false }}
-          generate_release_notes: false
+          prerelease: false
+          files: "*.zip"
+          fail_on_unmatched_files: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
