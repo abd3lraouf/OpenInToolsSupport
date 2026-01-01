@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.2] - 2026-01-01
+
+### Changed
+- **Improved Documentation** - Rewrote plugin description and README with human, storytelling tone
+
+## [2.1.1] - 2026-01-01
+
+### Fixed
+- **DataContext Error** - Fix "Unknown data context kind" error when opening Xcode dropdown in IntelliJ 2025.3+
+- **Plugin Icon** - Fix plugin icon path for proper display in IDE plugin browser
+
 ## [2.1.0] - 2026-01-01
 
 ### Added

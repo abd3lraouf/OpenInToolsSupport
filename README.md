@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-2.1.1-success.svg" alt="Version 2.1.1">
+  <img src="https://img.shields.io/badge/Version-2.1.2-success.svg" alt="Version 2.1.2">
   <a href="https://plugins.jetbrains.com/plugin/27235-open-in-tools"><img src="https://img.shields.io/jetbrains/plugin/d/27235-open-in-tools.svg" alt="Downloads"></a>
   <img src="https://img.shields.io/badge/IntelliJ-2025.2+-07C3F2.svg" alt="IntelliJ 2025.2+">
   <img src="https://img.shields.io/badge/macOS%20|%20Windows%20|%20Linux-lightgrey.svg" alt="Platforms">
@@ -123,6 +123,9 @@ Toggle in **Settings → Tools → Open In Tools → Xcode**.
 ---
 
 ## 🆕 What's New
+
+### 2.1.2
+- Improved documentation with human, storytelling tone
 
 ### 2.1.1
 - Fixed DataContext error when opening Xcode dropdown (IntelliJ 2025.3+)
