@@ -6,6 +6,15 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 - **Improved Documentation** - Rewrote plugin description and README with human, storytelling tone
+- **Native Xcode Dropdown** - Refactored to use native JetBrains ListPopup for proper look and feel
+- **Dynamic Popup Updates** - Xcode dropdown now refreshes in real-time when project scan completes
+- **Better Settings Dialog** - Uses ID-based navigation with background thread to avoid Android Studio EDT errors
+
+### Fixed
+- **Threading Issues** - Added timeouts to AppleScript execution to prevent thread blocking
+- **EDT Safety** - Fixed CompletableFuture callbacks to properly marshal UI operations to EDT
+- **Memory Leaks** - Fixed DocumentListener leak in OpenInToolsPopup
+- **VFS Deadlock** - Fixed synchronous VFS refresh under read lock error
 
 ## [2.1.1] - 2026-01-01
 

@@ -44,7 +44,7 @@ You know that moment when you're in Android Studio, but need to quickly check so
 - **Xcode dropdown** just like Android Studio's run configurations
 
 <p align="center">
-  <img src="art/screenshots/toolbar.png" width="700" alt="Toolbar buttons for quick switching"/>
+  <img src="art/toolbar-xcode-dropdown.png" width="700" alt="Toolbar buttons for quick switching"/>
 </p>
 
 ### Supported Editors
@@ -125,7 +125,11 @@ Toggle in **Settings → Tools → Open In Tools → Xcode**.
 ## 🆕 What's New
 
 ### 2.1.2
-- Improved documentation with human, storytelling tone
+- Native Xcode dropdown with proper JetBrains styling
+- Dynamic popup updates when project scan completes
+- Improved settings dialog navigation (fixes Android Studio EDT errors)
+- Fixed threading issues and memory leaks
+- Improved documentation
 
 ### 2.1.1
 - Fixed DataContext error when opening Xcode dropdown (IntelliJ 2025.3+)
