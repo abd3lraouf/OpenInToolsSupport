@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.3.0] - 2026-01-05
+
+### Added
+- **Expanded Platform Support** - Now supports IntelliJ IDEA 2024.1 and later (previously 2025.2+)
+  - Compatible with all JetBrains IDEs from 2024.1 onwards
+  - Includes Android Studio 2024.1+
+
+### Improved
+- **Xcode Dropdown Behavior** - Play button now properly switches between selection and direct-open modes
+  - When play button is visible: click to select, play button to open
+  - When play button is hidden: click to open immediately
+  - Rescan and Configure always work immediately
+
 ## [2.2.4] - 2026-01-05
 
 ### Fixed
