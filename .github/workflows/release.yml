@@ -111,7 +111,7 @@ jobs:
           ls -la *.zip
 
       - name: Create Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.version.outputs.tag }}
           name: OpenInTools ${{ steps.version.outputs.tag }}
@@ -120,6 +120,7 @@ jobs:
           prerelease: false
           files: "*.zip"
           fail_on_unmatched_files: false
+          overwrite_files: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
