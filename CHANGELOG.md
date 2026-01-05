@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.3.1] - 2026-01-05
+
+### Improved
+- **Xcode Dropdown Display** - Icon and text now match the selected item type
+  - Workspaces/projects show Xcode icon
+  - Podfile shows text file icon with `parent/Podfile` format
+  - Info.plist shows XML icon with `parent/Info.plist` format
+- **Intelligent Config File Launch** - Podfile and Package.swift now open associated workspace or project
+  - Looks for `.xcworkspace` in same directory first
+  - Falls back to `.xcodeproj` if no workspace found
+  - Opens file standalone only if no project exists
+- **Direct Mode Display** - When play button is disabled, dropdown shows "Open in Xcode" with default icon
+
 ## [2.3.0] - 2026-01-05
 
 ### Added
