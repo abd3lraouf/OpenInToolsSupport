@@ -2,25 +2,69 @@
 
 All notable changes to this project will be documented in this file.
 
-## [2.1.2] - 2026-01-01
-
-### Changed
-- **Improved Documentation** - Rewrote plugin description and README with human, storytelling tone
-- **Native Xcode Dropdown** - Refactored to use native JetBrains ListPopup for proper look and feel
-- **Dynamic Popup Updates** - Xcode dropdown now refreshes in real-time when project scan completes
-- **Better Settings Dialog** - Uses ID-based navigation with background thread to avoid Android Studio EDT errors
+## [2.2.4] - 2026-01-05
 
 ### Fixed
-- **Threading Issues** - Added timeouts to AppleScript execution to prevent thread blocking
-- **EDT Safety** - Fixed CompletableFuture callbacks to properly marshal UI operations to EDT
-- **Memory Leaks** - Fixed DocumentListener leak in OpenInToolsPopup
-- **VFS Deadlock** - Fixed synchronous VFS refresh under read lock error
+- **Xcode Project Scanning** - Fixed "Scanning for projects..." that would never complete on some Android Studio versions
+
+## [2.2.3] - 2026-01-01
+
+### Improved
+- **Settings UI Overhaul** - Complete redesign of the Open In Tools settings panel
+  - Table-based tool configuration with inline editing
+  - Add/remove tools with smart detection
+  - "Detect All" button to auto-discover installed tools
+  - Drag-and-drop ordering for toolbar and context menu
+- **Attribution Panel** - Updated developer attribution
+
+### Fixed
+- **Play Button Default** - Xcode play button in toolbar now disabled by default
+- **UI Polish** - Various spacing and alignment improvements in settings
+
+## [2.2.2] - 2026-01-01
+
+### Fixed
+- **Incorrect Settings Navigation** - Fixed error messages pointing to non-existent settings page
+- **Robust Tool Detection** - Improved detection accuracy across all platforms
+
+### Improved
+- **Windows Detection** - Better support for various installation locations and package managers
+- **Linux Detection** - Full XDG compliance, Flatpak and Snap support
+
+## [2.2.1] - 2026-01-01
+
+### Fixed
+- **False Detection of Uninstalled Apps** - Tools now correctly show as "not detected" when the app is uninstalled
+- **Path Display** - Clean app bundle paths shown in settings instead of internal executables
+
+## [2.2.0] - 2026-01-01
+
+### Added
+- **Smart App Detection** - Intelligent platform-aware application discovery
+  - **macOS**: Uses Spotlight for instant, accurate detection
+  - **Windows**: Searches registry and common installation paths
+  - **Linux**: Searches desktop files and system paths
+- **Path Normalization** - Automatically cleans up internal app paths for better display
+
+### Improved
+- **Detection Accuracy** - More reliable tool detection across all platforms
+
+## [2.1.2] - 2026-01-01
+
+### Improved
+- **Native Xcode Dropdown** - Uses native JetBrains popup for better look and feel
+- **Dynamic Updates** - Xcode dropdown refreshes in real-time when project scan completes
+- **Searchable Settings** - Find settings via IDE's Settings search
+
+### Fixed
+- **Threading Stability** - Improved background task handling
+- **Memory Usage** - Fixed resource leaks in popup components
 
 ## [2.1.1] - 2026-01-01
 
 ### Fixed
-- **DataContext Error** - Fix "Unknown data context kind" error when opening Xcode dropdown in IntelliJ 2025.3+
-- **Plugin Icon** - Fix plugin icon path for proper display in IDE plugin browser
+- **Compatibility** - Fixed error when opening Xcode dropdown in IntelliJ 2025.3+
+- **Plugin Icon** - Fixed icon display in IDE plugin browser
 
 ## [2.1.0] - 2026-01-01
 
@@ -30,16 +74,14 @@ All notable changes to this project will be documented in this file.
 - **Direct Open Mode** - When play button is hidden, clicking configurations opens them immediately
 - **Intelligent Plist Opening** - Info.plist files open within their containing workspace/project context
 - **Project Discovery** - Background scanning for Xcode workspaces, projects, and Info.plist files
-- **Release Script** - Local validation script matching CI workflow
 
-### Changed
-- **Improved Xcode Integration** - Uses AppleScript for better file reveal in Xcode
-- **Settings Persistence** - Xcode toolbar settings now persist across sessions
-- **Better UX** - No checkmarks in direct open mode (selection vs direct)
+### Improved
+- **Xcode Integration** - Better file reveal in Xcode
+- **Settings Persistence** - Xcode toolbar settings persist across sessions
 
 ### Fixed
-- **Toolbar Button Padding** - Correct margins matching Android Studio's run configuration selector
-- **Popup Selection** - Mouse hover correctly highlights items in dropdown
+- **Toolbar Appearance** - Correct button margins matching Android Studio's style
+- **Popup Selection** - Mouse hover correctly highlights items
 
 ## [2.0.0] - 2025-12-31
 
@@ -53,17 +95,16 @@ All notable changes to this project will be documented in this file.
 - **Tool Aliases** - Search tools by aliases in quick switcher
 - **Recent Tools Tracking** - Quick switcher shows recently used tools first
 
-### Changed
-- **Dynamic Toolbar** - Toolbar now dynamically shows enabled tools in configured order
-- **Improved Settings UI** - Redesigned settings with drag-and-drop ordering
-- **Better Architecture** - Refactored to follow SOLID principles
+### Improved
+- **Dynamic Toolbar** - Toolbar dynamically shows enabled tools in configured order
+- **Settings UI** - Redesigned settings with drag-and-drop ordering
 
 ## [1.0.1] - 2025-04-29
 
-### Changed
-- Enhanced Xcode action component for improved theme integration
-- Refactored settings UI for better clarity
-- Updated notification messages
+### Improved
+- Enhanced theme integration
+- Better settings UI clarity
+- Improved notification messages
 
 ## [1.0.0] - 2025-04-29
 
